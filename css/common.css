@@ -30,4 +30,9 @@ body {
 .gallery-image {
   width: 360px;
   height: 300px;
+  display: block;
+}
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
 }
