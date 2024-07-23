@@ -10,6 +10,8 @@ function createBoxes(amount) {
   const boxSizeIncrement = 10; // Збільшення розміру кожного наступного елемента
   const initialSize = 30; // Розмір першого елемента
 
+  const tempContainer = document.createElement("div");
+
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     const size = initialSize + i * boxSizeIncrement;
@@ -17,8 +19,10 @@ function createBoxes(amount) {
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
     box.style.margin = "44px"; // Додаємо відступ між елементами
-    boxesContainer.append(box);
+    tempContainer.append(box);
   }
+  // Додаємо тимчасовий контейнер до boxesContainer
+  boxesContainer.append(tempContainer);
 }
 
 function destroyBoxes() {
